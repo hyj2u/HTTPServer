@@ -10,11 +10,14 @@ public class Json {
     private static ObjectMapper objectMapper;
 
     private static ObjectMapper defaultObjectMapper(){
-        ObjectMapper om = new ObjectMapper();
-        om.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        return om;
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        return objectMapper;
     }
     public static JsonNode parse(String jsonSrc) throws JsonProcessingException {
+        if(objectMapper ==null){
+            objectMapper=defaultObjectMapper();
+        }
         return objectMapper.readTree(jsonSrc);
     }
     public static <A> A fromJson(JsonNode node, Class<A> clazz) throws JsonProcessingException {

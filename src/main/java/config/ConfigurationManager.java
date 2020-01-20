@@ -13,6 +13,7 @@ public class ConfigurationManager {
     private static Configuration currentConfiguration;
 
     private ConfigurationManager() {
+
     }
     public static ConfigurationManager getInstance(){
         if(configurationManager ==null){
@@ -29,17 +30,19 @@ public class ConfigurationManager {
            throw new HttpConfigurationException(e);
         }
         StringBuffer  sb = new StringBuffer();
-        int read = 0;
+        int read=0;
+
         try {
-            read = fileReader.read();
-            while(read != -1){
+            while((read= fileReader.read()) != -1){
                 sb.append((char)read);
             }
         } catch (IOException e) {
+
             throw new HttpConfigurationException(e);
         }
 
         JsonNode conf = null;
+
         try {
             conf = Json.parse(sb.toString());
         } catch (JsonProcessingException e) {
