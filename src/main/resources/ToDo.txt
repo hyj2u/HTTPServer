@@ -1,10 +1,9 @@
 read configuration files
-open a scoket to listen at a port
+open a socket to listen at a port
 read request messages
 open and read files from the filesystem
 write response messages
-
-jason parsing
+Send HTTP Get/Post Request and Read JSON response
 
 과제 내용 :
 - 개별 과제
