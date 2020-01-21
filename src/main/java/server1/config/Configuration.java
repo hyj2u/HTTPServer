@@ -1,4 +1,4 @@
-package config;
+package server1.config;
 
 public class Configuration {
     private int port;

@@ -1,8 +1,8 @@
-package config;
+package server1.config;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
-import util.Json;
+import server1.util.Json;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

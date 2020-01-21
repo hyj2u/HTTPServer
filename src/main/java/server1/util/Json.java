@@ -1,4 +1,4 @@
-package util;
+package server1.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;

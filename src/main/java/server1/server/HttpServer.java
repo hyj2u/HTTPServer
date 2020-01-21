@@ -1,16 +1,12 @@
-package server;
+package server1.server;
 
-import config.Configuration;
-import config.ConfigurationManager;
-import core.ServerListenerThread;
+import server1.config.Configuration;
+import server1.config.ConfigurationManager;
+import server1.core.ServerListenerThread;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
 
 // Driver class for the Http Server
 public class HttpServer {
