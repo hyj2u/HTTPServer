@@ -1,4 +1,4 @@
-package server2.router;
+package server2.handler;
 
 import server2.util.RequestLogger;
 
