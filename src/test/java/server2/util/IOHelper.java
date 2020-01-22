@@ -20,4 +20,8 @@ public class IOHelper {
     public OutputStream getOutputStream() {
         return outputStream;
     }
+
+    public String getStringOutput(){
+        return outputStream.toString();
+    }
 }
