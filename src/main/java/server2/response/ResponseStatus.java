@@ -4,13 +4,12 @@ public enum ResponseStatus {
     OK("200 OK", ""),
     CREATED("201 Created", ""),
     NOCONTENT("204 No Content", ""),
-    ACCEPTED("202 Accepted", ""),
+    METHODNOTALLOWED("405 Method Not Alloewd", "The request method cannot be used"),
     NOTMODIFIED("304 Not Modified", "Redirection message"),
     UNAUTHORIZED("401 Unauthorized","Client must authenticate itself to get the requested response"),
     NOTFOUND("404 Not Found", "404 Error - The server can not find requested resource"),
-    BADREQUEST("400 Bad Request", "The server could not understand the request due to invalid systax"),
-    FORBIDDEN("403 Forbidden","The client does not have access rights to content"),
-    TOOMANYREQUESTS("429 Too Many Requests", "The user has sent too many requests in a given amount of time"),
+    PARTIALCONTENT("206 partial Content", ""),
+    RANGENOTSATISFIABLE("416 RangeNotSatisfiable",""),
     INTENRNALSERVERERROR("500 Internal Server Error", "500 Error - The server has encountered a situation it doesn't know how to handle");
 
     private String phrase;
