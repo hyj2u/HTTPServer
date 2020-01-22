@@ -17,5 +17,7 @@ public class IOHelper {
         return inputStream;
     }
 
-
+    public OutputStream getOutputStream() {
+        return outputStream;
+    }
 }

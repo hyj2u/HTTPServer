@@ -2,10 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="465d766f-6d66-462d-9f5a-424f3a745d6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/server2/request/HttpVerbTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/server2/request/RequestParserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/server2/request/RequestReaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/server2/util/IOHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server2/response/Response.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server2/response/ResponseHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server2/response/ResponseStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server2/router/Handler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server2/router/RequestRouter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server2/server/ResponseWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/server2/util/ContentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/server2/response/ResponseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/server2/server/ResponseWriterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,9 +19,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ToDo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ToDo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +36,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Enum" />
         <option value="Arquillian JUnit Test Class" />
+        <option value="Enum" />
         <option value="Class" />
         <option value="JUnit4 Test Class" />
       </list>
@@ -81,6 +85,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="server2.server" />
+      <recent name="server2.response" />
       <recent name="server2.request" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -92,27 +98,7 @@
       <recent name="C:\Users\hyj2u\Documents\httpServer\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.RequestParserTest">
-    <configuration name="HttpVerbTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;server2.request.HttpVerbTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.ResponseTest">
     <configuration name="RequestParserTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -193,13 +179,33 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="ResponseTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;server2.response.ResponseTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.ResponseTest" />
         <item itemvalue="Gradle.RequestParserTest" />
         <item itemvalue="Gradle.RequestParserTest.givenRequestWithNoBody_buildRequest" />
         <item itemvalue="Gradle.RequestParserTest.givenRequest_buildRequest" />
         <item itemvalue="Gradle.RequestReaderTest" />
-        <item itemvalue="Gradle.HttpVerbTest" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +232,9 @@
       <option name="presentableId" value="Default" />
       <updated>1579481074027</updated>
       <workItem from="1579481076114" duration="16200000" />
-      <workItem from="1579565925740" duration="19345000" />
+      <workItem from="1579565925740" duration="21793000" />
+      <workItem from="1579652437134" duration="297000" />
+      <workItem from="1579652813583" duration="7311000" />
     </task>
     <task id="LOCAL-00001" summary="Set up &amp; Overview">
       <created>1579488615236</created>
@@ -277,7 +285,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579590455641</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Test(HttpVerb,RequestParser,RequestReader)">
+      <created>1579595057674</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579595057674</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,25 +306,26 @@
     <MESSAGE value="refactoring" />
     <MESSAGE value="Server/ConnectionAcceptor/RequestLogger" />
     <MESSAGE value="RequestParser" />
-    <option name="LAST_COMMIT_MESSAGE" value="RequestParser" />
+    <MESSAGE value="Test(HttpVerb,RequestParser,RequestReader)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Test(HttpVerb,RequestParser,RequestReader)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="2376" height="1216" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1579593921949">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="92" y="92" width="2376" height="1216" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579593921949" />
-    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser" timestamp="1579591846018">
+    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser" timestamp="1579671355833">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579591846018" />
+    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579671355833" />
     <state x="957" y="628" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1579567565989">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="957" y="628" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579567565989" />
-    <state x="871" y="294" key="CommitChangelistDialog2" timestamp="1579590451966">
+    <state x="871" y="294" key="CommitChangelistDialog2" timestamp="1579595053981">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="871" y="294" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579590451966" />
+    <state x="871" y="294" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579595053981" />
     <state x="248" y="128" key="DiffContextDialog" timestamp="1579510182814">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -318,22 +334,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="444" key="FileChooserDialogImpl/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579488532720" />
-    <state width="2517" height="319" key="GridCell.Tab.0.bottom" timestamp="1579594668096">
+    <state width="2517" height="319" key="GridCell.Tab.0.bottom" timestamp="1579601278405">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="319" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579594668096" />
-    <state width="2517" height="319" key="GridCell.Tab.0.center" timestamp="1579594668096">
+    <state width="2517" height="319" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579601278405" />
+    <state width="2517" height="319" key="GridCell.Tab.0.center" timestamp="1579601278405">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="319" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579594668096" />
-    <state width="2517" height="319" key="GridCell.Tab.0.left" timestamp="1579594668096">
+    <state width="2517" height="319" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579601278405" />
+    <state width="2517" height="319" key="GridCell.Tab.0.left" timestamp="1579601278405">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="319" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579594668096" />
-    <state width="2517" height="319" key="GridCell.Tab.0.right" timestamp="1579594668096">
+    <state width="2517" height="319" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579601278405" />
+    <state width="2517" height="319" key="GridCell.Tab.0.right" timestamp="1579601278405">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="319" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579594668096" />
+    <state width="2517" height="319" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579601278405" />
     <state width="2517" height="283" key="GridCell.Tab.1.bottom" timestamp="1579517727502">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -366,18 +382,18 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="872" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579590462220" />
-    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1579592407019">
+    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1579670772932">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579592407019" />
+    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579670772932" />
     <state x="2560" y="0" width="2143" height="1039" key="dock-window-1" timestamp="1579594577235">
       <screen x="2560" y="0" width="2560" height="1400" />
     </state>
     <state x="2560" y="0" width="2143" height="1039" key="dock-window-1/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579594577235" />
-    <state x="936" y="330" key="run.anything.popup" timestamp="1579583339361">
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup" timestamp="1579669555070">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="936" y="330" key="run.anything.popup/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579583339361" />
+    <state x="936" y="330" width="672" height="677" key="run.anything.popup/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579669555070" />
     <state x="943" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1579585398608">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

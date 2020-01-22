@@ -1,9 +1,7 @@
-read configuration files
-open a socket to listen at a port
-read request messages
-open and read files from the filesystem
-write response messages
 
+-기본 ResponseWriter
+- Router
+-후에 Handler는 시간 되는순으로 Method -> Cookie -> Head etc.
 
 과제 내용 :
 - 개별 과제
