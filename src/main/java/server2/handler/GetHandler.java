@@ -7,10 +7,12 @@ import server2.response.ResponseStatus;
 import server2.util.FileContentConverter;
 import server2.util.ResourceTypeIdentifier;
 
+import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-public class GetHandler extends Handler{
+public class GetHandler extends Handler {
     private String roothPath;
     private ResourceTypeIdentifier resourceTypeIdentifier;
     private FileContentConverter fileContentConverter;
@@ -23,40 +25,55 @@ public class GetHandler extends Handler{
         fileContentConverter = new FileContentConverter();
         rangeResponder = new RangeResponder(roothPath, fileContentConverter, resourceTypeIdentifier);
     }
-    private boolean resourceDoesNotExist(Request request){
-        if(Files.exists(Paths.get(roothPath+request.getResourcePath()))){
+
+    private boolean resourceDoesNotExist(Request request) {
+        if (Files.exists(Paths.get(roothPath + request.getResourcePath()))) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
-    private Response notFoundResponse(){
+
+    private Response notFoundResponse() {
         Response response = new Response();
         response.setResponseStatus(ResponseStatus.NOTFOUND);
         response.setBodyContent(ResponseStatus.NOTFOUND.getStatusBodyAsByte());
         return response;
     }
 
-
-    @Override
-    public Response getResponse(Request request) {
-        return null;
+    private boolean checkRange(Request request) {
+        return request.getHeaders().containsKey("Range");
     }
 
-    @Override
-    public void addHandledVerb(HttpVerb httpVerb) {
-        super.addHandledVerb(httpVerb);
+    private Response fullGet(Request request) throws IOException {
+        Response response = new Response();
+        File resource = new File(roothPath + request.getResourcePath());
+        response.setContentTypeHeader(resourceTypeIdentifier.getType(resource));
+        response.setBodyContent(fileContentConverter.getFullContents(resource));
+        response.setResponseStatus(ResponseStatus.OK);
+        return response;
     }
 
-    @Override
-    public void addHandledPathSegment(String pathSegment) {
-        super.addHandledPathSegment(pathSegment);
+
+    private Response doGet(Request request) throws IOException {
+        if (checkRange(request)) {
+            return rangeResponder.doRange(request);
+        } else {
+            return fullGet(request);
+        }
     }
 
+
     @Override
-    public boolean isHandledVerb(Request request) {
-        return super.isHandledVerb(request);
+    public Response getResponse(Request request) throws IOException {
+        if (resourceDoesNotExist(request)) {
+            return notFoundResponse();
+        } else {
+           return doGet(request);
+        }
     }
+
+
 
     @Override
     public boolean canHandles(Request request) {

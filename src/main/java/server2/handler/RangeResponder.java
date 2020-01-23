@@ -6,6 +6,8 @@ import server2.response.ResponseStatus;
 import server2.util.FileContentConverter;
 import server2.util.ResourceTypeIdentifier;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -59,13 +61,31 @@ public class RangeResponder {
         response.setResponseStatus(ResponseStatus.RANGENOTSATISFIABLE);
         return response;
     }
-    private Response setRangePartialContentResponse(byte[] fullContents, int first, int last){
+    private Response setRangePartialContentResponse(byte[] fullContents, int first, int last) {
         Response response = new Response();
-        byte[] specifiedContents = fileContentConverter.getPartialContent(fullContents,first,last);
+        byte[] specifiedContents = fileContentConverter.getPartialContent(fullContents, first, last);
         response.setBodyContent(specifiedContents);
-        response.setContentRangeHeader("bytes "+Integer.toString(first)+"-"+Integer.toString(last)+"/"+Integer.toString(fullContents.length));
+        response.setContentRangeHeader("bytes " + Integer.toString(first) + "-" + Integer.toString(last) + "/" + Integer.toString(fullContents.length));
         response.setResponseStatus(ResponseStatus.PARTIALCONTENT);
         return response;
     }
+    private Response getResponse(byte[] fullContents, int first, int last){
+        if(outOfRange(fullContents, first, last)){
+            return setRangeNotSatisfiableResponse(fullContents);
+        }else{
+            return setRangePartialContentResponse(fullContents, first, last);
+        }
+
+    }
+    public Response doRange(Request request) throws IOException {
+        File resource = new File((rootPath+request.getResourcePath()));
+        byte[] fullContetns = fileContentConverter.getFullContents(resource);
+        String rangeSlice = getRangePart(request);
+        ArrayList<Integer> rangeLimits = getRangeLimits(fullContetns, rangeSlice);
+        Response response = getResponse(fullContetns, rangeLimits.get(0), rangeLimits.get(1));
+        response.setContentTypeHeader(resourceTypeIdentifier.getType(resource));
+        return response;
+    }
+
 
 }
