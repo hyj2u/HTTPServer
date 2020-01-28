@@ -13,21 +13,21 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class GetHandler extends Handler {
-    private String roothPath;
+    private String rootPath;
     private ResourceTypeIdentifier resourceTypeIdentifier;
     private FileContentConverter fileContentConverter;
     private RangeResponder rangeResponder;
 
-    public GetHandler(String roothPath) {
-        this.roothPath = roothPath;
+    public GetHandler(String rootPath) {
+        this.rootPath = rootPath;
         addHandledVerb(HttpVerb.GET);
         resourceTypeIdentifier = new ResourceTypeIdentifier();
         fileContentConverter = new FileContentConverter();
-        rangeResponder = new RangeResponder(roothPath, fileContentConverter, resourceTypeIdentifier);
+        rangeResponder = new RangeResponder(rootPath, fileContentConverter, resourceTypeIdentifier);
     }
 
     private boolean resourceDoesNotExist(Request request) {
-        if (Files.exists(Paths.get(roothPath + request.getResourcePath()))) {
+        if (Files.exists(Paths.get(rootPath + request.getResourcePath()))) {
             return false;
         } else {
             return true;
@@ -47,7 +47,7 @@ public class GetHandler extends Handler {
 
     private Response fullGet(Request request) throws IOException {
         Response response = new Response();
-        File resource = new File(roothPath + request.getResourcePath());
+        File resource = new File(rootPath + request.getResourcePath());
         response.setContentTypeHeader(resourceTypeIdentifier.getType(resource));
         response.setBodyContent(fileContentConverter.getFullContents(resource));
         response.setResponseStatus(ResponseStatus.OK);
