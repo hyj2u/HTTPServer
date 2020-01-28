@@ -10,7 +10,8 @@ public enum ResponseStatus {
     NOTFOUND("404 Not Found", "404 Error - The server can not find requested resource"),
     PARTIALCONTENT("206 partial Content", ""),
     RANGENOTSATISFIABLE("416 RangeNotSatisfiable",""),
-    INTENRNALSERVERERROR("500 Internal Server Error", "500 Error - The server has encountered a situation it doesn't know how to handle");
+    INTENRNALSERVERERROR("500 Internal Server Error", "500 Error - The server has encountered a situation it doesn't know how to handle"),
+    PRECONDITIONFAILED("412 Precondition Failed", "Access to the target resource has been denied");
 
     private String phrase;
     private String statusBody;
