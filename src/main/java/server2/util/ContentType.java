@@ -4,7 +4,7 @@ public enum ContentType {
     TXT("text/plain"),
     HTML("text/html"),
     GIF("image/gif"),
-    JPG("img/jpg"),
+    JPG("image/jpg"),
     PNG("image/png");
 
     private String contentTypeString;

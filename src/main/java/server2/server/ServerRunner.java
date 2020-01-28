@@ -1,5 +1,6 @@
 package server2.server;
 
+import java.io.IOException;
 import java.net.Socket;
 
 public class ServerRunner implements Runnable {
@@ -13,6 +14,10 @@ public class ServerRunner implements Runnable {
 
     @Override
     public void run() {
-        //respondTo
+        try {
+            connectionManager.respondTo(socket);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -16,29 +16,31 @@ import java.util.concurrent.Executor;
 public class HttpServer {
 
     private ServerSocket serverSocket;
-    private boolean serverStatus;
+    private ServerStatus serverStatus;
     private Executor executor;
     private RequestRouter requestRouter;
     private RequestLogger requestLogger;
+    private PrintStream printStream;
 
     private final static Logger LOGGER = LoggerFactory.getLogger(HttpServer.class);
 
-    public HttpServer(ServerSocket serverSocket, boolean serverStatus, Executor executor, RequestRouter requestRouter, RequestLogger requestLogger) {
+    public HttpServer(PrintStream printStream, ServerSocket serverSocket, ServerStatus serverStatus, Executor executor, RequestRouter requestRouter, RequestLogger requestLogger) {
         this.serverSocket = serverSocket;
         this.serverStatus = serverStatus;
         this.executor = executor;
         this.requestRouter = requestRouter;
         this.requestLogger = requestLogger;
+        this.printStream= printStream;
     }
 
     public void start() {
-        while (serverStatus) {
+        while (serverStatus.isRunning()) {
             try {
                 Socket socket = serverSocket.accept();
                 LOGGER.info("Connection made");
                 executor.execute(new ServerRunner(socket, new ConnectionManager(requestRouter, requestLogger)));
             } catch (IOException e) {
-                requestLogger.addLog("Socket error Occured");
+                requestLogger.addLog("Socket error Occurred");
                 LOGGER.error(e.getMessage());
             }
 

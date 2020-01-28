@@ -13,6 +13,10 @@ public class IOHelper {
         printStream = new PrintStream(outputStream);
     }
 
+    public PrintStream getPrintStream() {
+        return printStream;
+    }
+
     public InputStream getInputStream() {
         return inputStream;
     }

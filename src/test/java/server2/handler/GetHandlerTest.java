@@ -31,8 +31,8 @@ public class GetHandlerTest {
     }
     @Test
     public void getRequestForNotFoundResponse() throws IOException {
-        String nonExixtingFilePath = "/no-file.txt";
-        Request request = new Request(HttpVerb.GET, nonExixtingFilePath, emptyHeaders, emptyBody);
+        String nonExistingFilePath = "/no-file.txt";
+        Request request = new Request(HttpVerb.GET, nonExistingFilePath, emptyHeaders, emptyBody);
         Response response =getHandler.getResponse(request);
         assertEquals(ResponseStatus.NOTFOUND, response.getResponseStatus());
         assertArrayEquals(ResponseStatus.NOTFOUND.getStatusBodyAsByte(), response.getBodyContent());
