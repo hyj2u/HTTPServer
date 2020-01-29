@@ -13,29 +13,42 @@ import java.util.List;
 public class RequestRouter {
 
     private final ArrayList<Handler> handlers = new ArrayList<>();
-    private void addHandler(Handler handler){
+
+    private void addHandler(Handler handler) {
         handlers.add(handler);
     }
 
-    private void addHandlers(List<Handler> handlers){
-        for(Handler handler : handlers){
+    private void addHandlers(List<Handler> handlers) {
+        for (Handler handler : handlers) {
             addHandler(handler);
         }
     }
-    public RequestRouter(String rootPath, RequestLogger requestLogger){
+
+    public RequestRouter(String rootPath, RequestLogger requestLogger) {
         addHandlers(Arrays.asList(
                 new GetHandler(rootPath),
-                new PostHandler(rootPath)
+                new PostHandler(rootPath),
+                new CookieHandler(),
+                new FormHandler(rootPath),
+                new ParametersHandler(),
+                new DeleteHandler(rootPath),
+                new HeadHandler(rootPath),
+                new OptionsHandler(),
+                new PatchHandler(rootPath),
+                new PutHandler(rootPath),
+                new RedirectHandler()
         ));
     }
-    private Response methodNotAllowedResponse(){
+
+    private Response methodNotAllowedResponse() {
         Response response = new Response();
         response.setResponseStatus(ResponseStatus.METHODNOTALLOWED);
         return response;
     }
+
     public Response handle(Request request) throws IOException {
-        for(Handler handler : handlers){
-            if(handler.canHandles(request)){
+        for (Handler handler : handlers) {
+            if (handler.canHandles(request)) {
                 return handler.getResponse(request);
             }
         }
