@@ -26,9 +26,10 @@ public class PatchHandler extends Handler {
     }
 
     @Override
-    public boolean isHandledVerb(Request request) {
+    public boolean isHandledPathSegment(Request request) {
         return true;
     }
+
     private String createSHA1(String fileURI){
         fileContentConverter = new FileContentConverter();
         MessageDigest digest = null;

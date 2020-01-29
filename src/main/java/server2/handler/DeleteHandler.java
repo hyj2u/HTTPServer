@@ -20,10 +20,12 @@ public class DeleteHandler extends Handler {
         addHandledVerb(HttpVerb.DELETE);
     }
 
+
     @Override
-    public boolean isHandledVerb(Request request) {
+    public boolean isHandledPathSegment(Request request) {
         return true;
     }
+
     private void deleteResource(){
         try {
             Files.delete(Paths.get(rootPath+request.getResourcePath()));

@@ -73,10 +73,8 @@ public class GetHandler extends Handler {
         }
     }
 
-
-
     @Override
-    public boolean canHandles(Request request) {
+    public boolean isHandledPathSegment(Request request) {
         return true;
     }
 }

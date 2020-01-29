@@ -22,7 +22,7 @@ public abstract class Handler {
     public boolean isHandledVerb(Request request){
         return handledVerbs.contains(request.getHttpVerb());
     }
-    private boolean isHandledPathSegment(Request request){
+    public boolean isHandledPathSegment(Request request){
         for(String pathSegment : handledPathSegments){
             if(containsPathSegment(request, pathSegment)){
                 return true;
