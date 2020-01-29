@@ -2,10 +2,10 @@ package server2.request;
 
 public enum HttpVerb {
 
-    DELETE("DELETE", true, true),
+    DELETE("DELETE", true, false),
     GET("GET",true,true),
     POST("POST", true,true),
-    PUT("PUT", true,true),
+    PUT("PUT", true,false),
     PATCH("PATCH", true,true),
     HEAD("HEAD", true, true),
     OPTIONS("OPTIONS",true,true),
