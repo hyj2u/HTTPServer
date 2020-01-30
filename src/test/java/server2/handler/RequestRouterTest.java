@@ -5,7 +5,7 @@ import server2.request.HttpVerb;
 import server2.request.Request;
 import server2.response.Response;
 import server2.response.ResponseStatus;
-import server2.util.RequestLogger;
+import server2.util.Logger;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -21,14 +21,14 @@ public class RequestRouterTest {
     @Test
     public void requestCanHandles() throws IOException {
         Request request = new Request(HttpVerb.GET, testFilePath,emptyHeaders, emptyBody);
-        RequestRouter requestRouter = new RequestRouter(testRootPath, new RequestLogger());
+        RequestRouter requestRouter = new RequestRouter(testRootPath, new Logger());
         Response response = requestRouter.handle(request);
         assertEquals(ResponseStatus.OK, response.getResponseStatus());
     }
     @Test
     public void requestForNoHandler() throws IOException {
         Request request = new Request(HttpVerb.NOTRECOGNIZED, testFilePath, emptyHeaders, emptyBody);
-        RequestRouter requestRouter = new RequestRouter(testRootPath, new RequestLogger());
+        RequestRouter requestRouter = new RequestRouter(testRootPath, new Logger());
         Response response = requestRouter.handle(request);
         assertEquals(ResponseStatus.METHODNOTALLOWED, response.getResponseStatus());
     }

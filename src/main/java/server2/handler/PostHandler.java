@@ -18,19 +18,18 @@ public class PostHandler extends Handler {
     private Response response;
     private String rootPath;
 
-    public PostHandler(String rootPath) {
-        this.rootPath = rootPath;
+    public PostHandler() {
         addHandledVerb(HttpVerb.POST);
     }
 
+   @Override
+   public boolean isHandledPathSegment(Request request) {
+       return true;
+   }
+
 
     private void doPost() {
-        try {
-            //post handle later
-            Files.write(Paths.get(Paths.get(rootPath) + request.getResourcePath()), request.getBodyContent().getBytes());
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        response.setBodyContent(request.getBodyContent().getBytes());
         response.setResponseStatus(ResponseStatus.OK);
     }
 

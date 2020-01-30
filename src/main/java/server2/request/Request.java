@@ -33,7 +33,12 @@ public class Request {
         return bodyContent;
     }
     public String getRequestLine(){
-        return httpVerb+" "+resourcePath+" "+httpVersion;
+        String request="Request\r\n"+httpVersion+"\r\n"+httpVerb +" "+resourcePath+"\r\n";
+        for(Map.Entry<String, String> entry : headers.entrySet()){
+            request += entry.getKey()+": "+entry.getValue()+"\r\n";
+        }
+
+        return request;
     }
 
 }

@@ -3,8 +3,12 @@
 - Router
 -후에 Handler는 시간 되는순으로 Method -> Cookie -> Head etc.
 
-Post 추가구현
+
 form 핸들러 key value 복수일 때
+parameter form cookie url 자동매핑
+cookie 보완
+thread 에러 처리
+
 
 과제 내용 :
 - 개별 과제

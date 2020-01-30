@@ -50,7 +50,7 @@ public class PatchHandlerTest {
         HashMap<String, String > EtagHeader = new HashMap<>();
         EtagHeader.put("If-Match", SHAData);
         String contentToPatch ="patched content";
-        Request request = new Request(HttpVerb.PATCH, patchFilePath, EtagHeader, contentToPatch);
+        Request request = new Request(HttpVerb.PATCH, patchFilePath, EtagHeader,contentToPatch);
         Response response =patchHandler.getResponse(request);
         assertEquals(ResponseStatus.NOCONTENT, response.getResponseStatus());
         assertArrayEquals("patched content".getBytes(), fileContentConverter.getFullContents(testPatchFile));

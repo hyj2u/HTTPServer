@@ -3,7 +3,7 @@ package server2.handler;
 import server2.request.Request;
 import server2.response.Response;
 import server2.response.ResponseStatus;
-import server2.util.RequestLogger;
+import server2.util.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -24,19 +24,19 @@ public class RequestRouter {
         }
     }
 
-    public RequestRouter(String rootPath, RequestLogger requestLogger) {
+    public RequestRouter(String rootPath, Logger requestLogger) {
         addHandlers(Arrays.asList(
-                new GetHandler(rootPath),
-                new PostHandler(rootPath),
-                new CookieHandler(),
+               new CookieHandler(),
                 new FormHandler(rootPath),
+                new RedirectHandler(),
                 new ParametersHandler(),
                 new DeleteHandler(rootPath),
+                new GetHandler(rootPath),
+                new PostHandler(),
                 new HeadHandler(rootPath),
                 new OptionsHandler(),
                 new PatchHandler(rootPath),
-                new PutHandler(rootPath),
-                new RedirectHandler()
+                new PutHandler(rootPath)
         ));
     }
 

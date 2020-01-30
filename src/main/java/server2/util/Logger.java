@@ -2,10 +2,10 @@ package server2.util;
 
 import java.util.ArrayList;
 
-public class RequestLogger {
+public class Logger {
     private ArrayList<String> logs;
 
-    public RequestLogger() {
+    public Logger() {
         logs = new ArrayList<>();
     }
 

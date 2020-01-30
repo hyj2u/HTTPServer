@@ -3,6 +3,7 @@ package server2.request;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.Map;
 
 public class RequestParser {
     private HttpVerb matchHttpverb(String requestedVerb) {
@@ -30,26 +31,41 @@ public class RequestParser {
         }
         return newHeaders;
     }
-    private boolean contentLengthExists(HashMap<String, String> headers){
-        return headers.get("Content-Length") !=null? true :false;
+
+    private boolean contentLengthExists(HashMap<String, String> headers) {
+        return headers.get("Content-Length") != null ? true : false;
     }
+
     private String setBodyContent(HashMap<String, String> headers, RequestReader requestReader) throws IOException {
-        if(contentLengthExists(headers)==true){
+        if (contentLengthExists(headers) == true) {
             int length = Integer.parseInt(headers.get("Content-Length").trim());
             return requestReader.extractBodyContent(length);
-        }else{
+        } else {
             return "";
         }
     }
 
     public Request parse(InputStream clientIn) throws IOException {
         RequestReader requestReader = new RequestReader(clientIn);
-        String[] requestLine = requestReader.extractRequestLine().split(" ");
-        HttpVerb httpVerb = matchHttpverb(requestLine[0]);
-        String resourcePath = requestLine[1];
-        HashMap<String,String> headers = setRequestHeaders(requestReader.extractHeaders());
-        String bodyContent =setBodyContent(headers,requestReader);
-        return new Request(httpVerb, resourcePath, headers,bodyContent);
+
+        String[] requestLine = new String[0];
+        HttpVerb httpVerb = null;
+        String resourcePath = null;
+
+
+        HashMap<String, String> headers = null;
+        String bodyContent = null;
+        try {
+            requestLine = requestReader.extractRequestLine().split(" ");
+            httpVerb = matchHttpverb(requestLine[0]);
+            resourcePath = requestLine[1];
+            headers = setRequestHeaders(requestReader.extractHeaders());
+            bodyContent = setBodyContent(headers, requestReader);
+        } catch (IOException e) {
+            clientIn.close();
+        }
+
+        return new Request(httpVerb, resourcePath, headers, bodyContent);
     }
 
 

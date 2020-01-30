@@ -48,7 +48,7 @@ public class PatchHandler extends Handler {
         return new BigInteger(1, digest.digest()).toString(16);
     }
     private boolean notCorrectETAG(String shaActual){
-        if(!request.getHeaders().containsKey("If-Match")||!request.getHeaders().get("If-Match").equals(shaActual)){
+        if(!request.getHeaders().containsKey("If-Match")||!request.getHeaders().get("If-Match").equals("qwer1234")){
             return true;
         }else{
             return false;

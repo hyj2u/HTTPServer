@@ -62,4 +62,13 @@ public class Response {
     public void setCookieHeader(String cookieType){
         headers.put(ResponseHeader.COOKIE, cookieType.getBytes());
     }
+    public String getResponseLine(){
+       String response = "Response\r\n"+new String(httpVersion)+" "+responseStatus+"\r\n";
+     for(Map.Entry<ResponseHeader, byte[]> entry : headers.entrySet()){
+         response+=entry.getKey()+": "+new String(entry.getValue());
+     }
+
+        return response;
+    }
+
 }
