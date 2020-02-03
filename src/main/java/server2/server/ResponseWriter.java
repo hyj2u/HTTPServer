@@ -11,6 +11,7 @@ import java.util.Map;
 public class ResponseWriter {
     private void writeToSocket(byte[] response, OutputStream outputStream) throws IOException {
         outputStream.write(response);
+        outputStream.flush();
     }
     public void write(Response response, OutputStream outputStream) throws IOException {
         ByteArrayOutputStream responseStream = new ByteArrayOutputStream();
@@ -27,5 +28,6 @@ public class ResponseWriter {
         responseStream.write("\r\n".getBytes());
         responseStream.write(response.getBodyContent());
         writeToSocket(responseStream.toByteArray(), outputStream);
+        responseStream.flush();
     }
 }

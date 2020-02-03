@@ -6,6 +6,7 @@ import server2.request.RequestParser;
 import server2.response.Response;
 import server2.util.Logger;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.Socket;
 
 
@@ -35,7 +36,8 @@ public class ConnectionManager {
 
 
     private Request getRequest(Socket socket) throws IOException {
-        return requestParser.parse(socket.getInputStream());
+        InputStream clientIn = socket.getInputStream();
+        return requestParser.parse(clientIn);
     }
     private Response getResponse(Socket socket) throws IOException {
         Request request = getRequest(socket);
@@ -48,6 +50,7 @@ public class ConnectionManager {
         writeToLog(response);
         System.out.println(responseLogger.getLogsBody());
         responseWriter.write(response, socket.getOutputStream());
+        System.out.println("socket close");
         socket.close();
     }
 

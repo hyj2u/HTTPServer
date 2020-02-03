@@ -38,7 +38,7 @@ public class HttpServer {
         while (serverStatus.isRunning()) {
             try {
                 Socket socket = serverSocket.accept();
-                LOGGER.info("Connection made");
+                printStream.println("Request made");
                 executor.execute(new ServerRunner(socket, new ConnectionManager(requestRouter, requestLogger, responseLogger)));
             } catch (IOException e) {
                 requestLogger.addLog("Socket error Occurred");

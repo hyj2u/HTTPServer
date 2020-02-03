@@ -18,6 +18,7 @@ public class Logger {
         for (String log : logs) {
             responseBody.append(log).append("\n");
         }
+        logs.clear();
         return new String(responseBody);
     }
 }

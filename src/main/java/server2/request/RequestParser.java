@@ -55,15 +55,13 @@ public class RequestParser {
 
         HashMap<String, String> headers = null;
         String bodyContent = null;
-        try {
-            requestLine = requestReader.extractRequestLine().split(" ");
-            httpVerb = matchHttpverb(requestLine[0]);
-            resourcePath = requestLine[1];
-            headers = setRequestHeaders(requestReader.extractHeaders());
-            bodyContent = setBodyContent(headers, requestReader);
-        } catch (IOException e) {
-            clientIn.close();
-        }
+        String line = requestReader.extractRequestLine();
+        requestLine = line.split(" ");
+        httpVerb = matchHttpverb(requestLine[0]);
+        resourcePath = requestLine[1];
+        headers = setRequestHeaders(requestReader.extractHeaders());
+        bodyContent = setBodyContent(headers, requestReader);
+
 
         return new Request(httpVerb, resourcePath, headers, bodyContent);
     }
