@@ -23,7 +23,7 @@ public class Main {
         RequestRouter requestRouter = new RequestRouter("src/main/resources", requestLogger);
         try {
             ServerSocket serverSocket = new ServerSocket(serverConfiguration.getPort());
-            HttpServer httpServer = new HttpServer(System.out, serverSocket,new ServerStatus(), Executors.newFixedThreadPool(20),requestRouter,requestLogger, responseLogger );
+            HttpServer httpServer = new HttpServer(System.out, serverSocket,new ServerStatus(), Executors.newFixedThreadPool(200),requestRouter,requestLogger, responseLogger );
             httpServer.start();
         } catch (IOException e) {
             LOGGER.error(e.getMessage());
