@@ -43,12 +43,14 @@ public class ConnectionManager {
         Request request = getRequest(socket);
         writeToLog(request);
         System.out.println(requestLogger.getLogsBody());
+        requestLogger.clearLog();
         return requestRouter.handle(request);
     }
     public void respondTo(Socket socket) throws IOException {
         Response response =getResponse(socket);
         writeToLog(response);
         System.out.println(responseLogger.getLogsBody());
+        responseLogger.clearLog();
         responseWriter.write(response, socket.getOutputStream());
         System.out.println("socket close");
         socket.close();

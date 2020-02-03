@@ -18,19 +18,17 @@ public class HttpServer {
     private ServerStatus serverStatus;
     private Executor executor;
     private RequestRouter requestRouter;
-    private Logger requestLogger;
-    private Logger responseLogger;
+
     private PrintStream printStream;
 
     private final static org.slf4j.Logger LOGGER = LoggerFactory.getLogger(HttpServer.class);
 
-    public HttpServer(PrintStream printStream, ServerSocket serverSocket, ServerStatus serverStatus, Executor executor, RequestRouter requestRouter, Logger requestLogger, Logger responseLogger) {
+    public HttpServer(PrintStream printStream, ServerSocket serverSocket, ServerStatus serverStatus, Executor executor, RequestRouter requestRouter) {
         this.serverSocket = serverSocket;
         this.serverStatus = serverStatus;
         this.executor = executor;
         this.requestRouter = requestRouter;
-        this.requestLogger = requestLogger;
-        this.responseLogger = responseLogger;
+
         this.printStream= printStream;
     }
 
@@ -39,9 +37,10 @@ public class HttpServer {
             try {
                 Socket socket = serverSocket.accept();
                 printStream.println("Request made");
+                Logger requestLogger = new Logger();
+                Logger responseLogger = new Logger();
                 executor.execute(new ServerRunner(socket, new ConnectionManager(requestRouter, requestLogger, responseLogger)));
             } catch (IOException e) {
-                requestLogger.addLog("Socket error Occurred");
                 LOGGER.error(e.getMessage());
             }
 
