@@ -12,7 +12,7 @@ import java.net.URLDecoder;
 public class ParametersHandler extends Handler {
     public ParametersHandler() {
         addHandledVerb(HttpVerb.GET);
-        addHandledPathSegment("parameter");
+        addHandledPathSegment("?");
     }
 
     private String removeFirstPart(String fullURI){
