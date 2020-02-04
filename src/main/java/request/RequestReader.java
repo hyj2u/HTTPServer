@@ -26,9 +26,10 @@ public class RequestReader {
         }
         return  new String(headers);
     }
-    public String extractBodyContent(int contentLength)  {
+    public String extractBodyContent(int contentLength) throws IOException {
         StringBuilder body =new StringBuilder();
         char[] buffer = new char[contentLength];
+        reader.read(buffer);
         for(char c : buffer){
             body.append(c);
         }
