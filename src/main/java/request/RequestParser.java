@@ -53,6 +53,9 @@ public class RequestParser {
         if (resourcePath.equals("/")) {
             resourcePath = "/index.html";
         }
+        if(resourcePath.equals("/index.html/style.css")){
+            resourcePath="/style.css";
+        }
         HashMap<String, String> headers = setRequestHeaders(requestReader.extractHeaders());
         String bodyContent = setBodyContent(headers, requestReader);
         return new Request(httpVerb, resourcePath, headers, bodyContent);
