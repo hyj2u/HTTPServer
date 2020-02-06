@@ -39,12 +39,14 @@ public class PutHandler extends Handler {
     private void doUpdateResponse(){
         writeFile();
         response.setResponseStatus(ResponseStatus.OK);
+
     }
 
     @Override
     public Response getResponse(Request request) {
         this.request = request;
         response = new Response();
+        response.setContentLengthHeader(request.getBodyContent().length()+"");
         if(Files.exists(Paths.get(rootPath+request.getResourcePath()))){
             doUpdateResponse();
         }else{

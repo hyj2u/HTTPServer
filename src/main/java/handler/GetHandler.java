@@ -47,6 +47,7 @@ public class GetHandler extends Handler {
         response.setContentTypeHeader(resourceTypeIdentifier.getType(resource));
         response.setBodyContent(fileContentConverter.getFullContents(resource));
         response.setResponseStatus(ResponseStatus.OK);
+        response.setContentLengthHeader(fileContentConverter.getFullContents(resource).length+"");
         return response;
     }
 

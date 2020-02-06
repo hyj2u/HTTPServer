@@ -88,7 +88,6 @@ public class RangeResponder {
         } else {
             return setRangePartialContentResponse(fullContents, first, last);
         }
-
     }
 
     public Response doRange(Request request) throws IOException {

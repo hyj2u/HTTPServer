@@ -32,7 +32,7 @@ public class RequestParser {
     }
 
     private boolean contentLengthExists(HashMap<String, String> headers) {
-        return headers.get("Content-Length") != null ;
+        return headers.get("Content-Length") != null;
     }
 
     private String setBodyContent(HashMap<String, String> headers, RequestReader requestReader) throws IOException {
@@ -50,9 +50,11 @@ public class RequestParser {
         String[] requestLine = line.split(" ");
         HttpVerb httpVerb = matchHttpverb(requestLine[0]);
         String resourcePath = requestLine[1];
-        HashMap<String, String>headers = setRequestHeaders(requestReader.extractHeaders());
+        if (resourcePath.equals("/")) {
+            resourcePath = "/index.html";
+        }
+        HashMap<String, String> headers = setRequestHeaders(requestReader.extractHeaders());
         String bodyContent = setBodyContent(headers, requestReader);
-
         return new Request(httpVerb, resourcePath, headers, bodyContent);
     }
 

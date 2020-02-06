@@ -53,19 +53,21 @@ public class Response {
     public void setContentRangeHeader(String contentRangeValue){
         headers.put(ResponseHeader.CONTENTRANGE, contentRangeValue.getBytes());
     }
-    public void setUnauthorizedHeader(String authenticateMessage){
-        headers.put(ResponseHeader.AUTHENTICATION, authenticateMessage.getBytes());
+    public void setEtagHeader(String etag){
+        headers.put(ResponseHeader.ETag, etag.getBytes());
     }
+    public void setContentLengthHeader(String contentLength){
+        headers.put(ResponseHeader.CONTENTLENGTH, contentLength.getBytes());
+    }
+
     public void setLocationHeader(String redirectURI){
         headers.put(ResponseHeader.LOCATION, redirectURI.getBytes());
     }
-    public void setCookieHeader(String cookieType){
-        headers.put(ResponseHeader.COOKIE, cookieType.getBytes());
-    }
+
     public String getResponseLine(){
        String response = "Response\r\n"+new String(httpVersion)+" "+responseStatus+"\r\n";
      for(Map.Entry<ResponseHeader, byte[]> entry : headers.entrySet()){
-         response+=entry.getKey()+": "+new String(entry.getValue());
+         response+=entry.getKey()+": "+new String(entry.getValue())+"\r\n";
      }
 
         return response;

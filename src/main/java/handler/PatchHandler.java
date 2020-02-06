@@ -62,9 +62,11 @@ public class PatchHandler extends Handler {
         String shaActual = createSHA1(rootPath+request.getResourcePath());
         if(notCorrectETAG(shaActual)){
             response.setResponseStatus(ResponseStatus.PRECONDITIONFAILED);
+            response.setEtagHeader("qwer1234");
         }else{
             Files.write(Paths.get(rootPath+request.getResourcePath()), request.getBodyContent().getBytes());
             response.setResponseStatus(ResponseStatus.NOCONTENT);
+            response.setContentLengthHeader(request.getBodyContent().length()+"");
         }
         return response;
 

@@ -2,15 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="465d766f-6d66-462d-9f5a-424f3a745d6e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/handler/DirectoryHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/handler/DirectoryHandlerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/classAnalysis.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.2.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/request/RequestReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/RequestReader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/GetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/GetHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/Handler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/Handler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/ParametersHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/ParametersHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/PatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/PatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/PutHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/PutHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/RangeResponder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/handler/RangeResponder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/request/RequestParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/request/RequestParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/Response.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/response/ResponseHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/response/ResponseHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/FileToDelete.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/FileToDelete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/ToDo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/ToDo.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/patchFile.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/patchFile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/photo.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testFile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testPatchFile.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,9 +69,9 @@
         <option value="package-info" />
         <option value="Arquillian JUnit Test Class" />
         <option value="Enum" />
-        <option value="JUnit4 Test Class" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -87,7 +104,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -102,16 +119,16 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="handler" />
       <recent name="server2.handler" />
       <recent name="server2.server" />
       <recent name="server2.util" />
       <recent name="server2.response" />
-      <recent name="server2.request" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\hyj2u\Documents\httpServer\src\main\resources" />
       <recent name="C:\Users\hyj2u\Documents\httpServer\src\test\java" />
       <recent name="C:\Users\hyj2u\Documents\httpServer\src\main\java" />
-      <recent name="C:\Users\hyj2u\Documents\httpServer\src\main\resources" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -131,18 +148,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="server2.Main" />
-      <module name="httpServer.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="server2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="DirectoryHandlerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;handler.DirectoryHandlerTest&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DirectoryHandlerTest.endInSlashisHandledPathSegment" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;handler.DirectoryHandlerTest.endInSlashisHandledPathSegment&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="FormHandlerTest.requestFormSetOK" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -184,33 +228,13 @@
       <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RequestReaderTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;server2.request.RequestReaderTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.DirectoryHandlerTest" />
+        <item itemvalue="Gradle.DirectoryHandlerTest.endInSlashisHandledPathSegment" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Gradle.FormHandlerTest.requestFormSetOK" />
         <item itemvalue="Gradle.RequestParserTest" />
-        <item itemvalue="Gradle.RequestReaderTest" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +272,9 @@
       <workItem from="1580688981340" duration="12195000" />
       <workItem from="1580710472085" duration="8414000" />
       <workItem from="1580775794829" duration="10451000" />
-      <workItem from="1580802329011" duration="21000" />
+      <workItem from="1580802329011" duration="1259000" />
+      <workItem from="1580861900159" duration="8361000" />
+      <workItem from="1580948764612" duration="8243000" />
     </task>
     <task id="LOCAL-00001" summary="Set up &amp; Overview">
       <created>1579488615236</created>
@@ -460,7 +486,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580710995953</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="extract body error handle">
+      <created>1580802386463</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1580802386463</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -468,7 +501,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="RequestParser" />
     <MESSAGE value="Test(HttpVerb,RequestParser,RequestReader)" />
     <MESSAGE value="Response, ResponseWriter" />
     <MESSAGE value="Test(Response, ResponseWriter)" />
@@ -493,25 +525,26 @@
     <MESSAGE value="update ParametersHandler" />
     <MESSAGE value="wrap up" />
     <MESSAGE value="Refactoring" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring" />
+    <MESSAGE value="extract body error handle" />
+    <option name="LAST_COMMIT_MESSAGE" value="extract body error handle" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="92" y="92" width="2376" height="1216" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1580366136879">
+    <state x="92" y="92" width="2376" height="1216" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1580964032868">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="92" y="92" width="2376" height="1216" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580366136879" />
-    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser" timestamp="1580348386570">
+    <state x="92" y="92" width="2376" height="1216" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580964032868" />
+    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser" timestamp="1580954555587">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580348386570" />
+    <state x="1085" y="393" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580954555587" />
     <state x="957" y="628" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1579567565989">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="957" y="628" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579567565989" />
-    <state x="1076" y="567" width="407" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1580451217311">
+    <state x="1076" y="567" width="407" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1580954351293">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1076" y="567" width="407" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580451217311" />
+    <state x="1076" y="567" width="407" height="272" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580954351293" />
     <state x="344" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580348598181">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -520,10 +553,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1010" y="450" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580791854693" />
-    <state x="871" y="294" key="CommitChangelistDialog2" timestamp="1580800336524">
+    <state x="871" y="294" key="CommitChangelistDialog2" timestamp="1580802382740">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="871" y="294" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580800336524" />
+    <state x="871" y="294" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580802382740" />
     <state x="248" y="128" key="DiffContextDialog" timestamp="1579510182814">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -532,22 +565,22 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1060" y="444" key="FileChooserDialogImpl/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579488532720" />
-    <state width="2517" height="367" key="GridCell.Tab.0.bottom" timestamp="1580802310935">
+    <state width="2517" height="319" key="GridCell.Tab.0.bottom" timestamp="1580964280560">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="367" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580802310935" />
-    <state width="2517" height="367" key="GridCell.Tab.0.center" timestamp="1580802310935">
+    <state width="2517" height="319" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580964280560" />
+    <state width="2517" height="319" key="GridCell.Tab.0.center" timestamp="1580964280560">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="367" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580802310935" />
-    <state width="2517" height="367" key="GridCell.Tab.0.left" timestamp="1580802310935">
+    <state width="2517" height="319" key="GridCell.Tab.0.center/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580964280560" />
+    <state width="2517" height="319" key="GridCell.Tab.0.left" timestamp="1580964280560">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="367" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580802310935" />
-    <state width="2517" height="367" key="GridCell.Tab.0.right" timestamp="1580802310935">
+    <state width="2517" height="319" key="GridCell.Tab.0.left/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580964280560" />
+    <state width="2517" height="319" key="GridCell.Tab.0.right" timestamp="1580964280560">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="2517" height="367" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580802310935" />
+    <state width="2517" height="319" key="GridCell.Tab.0.right/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580964280560" />
     <state width="2517" height="283" key="GridCell.Tab.1.bottom" timestamp="1580205586844">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -576,14 +609,14 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579493693702" />
-    <state x="872" y="436" key="Vcs.Push.Dialog.v2" timestamp="1580800303749">
+    <state x="872" y="436" key="Vcs.Push.Dialog.v2" timestamp="1580802391440">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580800303749" />
-    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580281760674">
+    <state x="872" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580802391440" />
+    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1580955975722">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580281760674" />
+    <state x="1051" y="418" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1580955975722" />
     <state x="2560" y="0" width="2125" height="1095" key="dock-window-1" timestamp="1580348634084">
       <screen x="2560" y="0" width="2560" height="1400" />
     </state>

@@ -48,6 +48,7 @@ public class ParametersHandler extends Handler {
         String body =getAllParams(request.getResourcePath());
         response.setBodyContent(body.getBytes());
         response.setResponseStatus(ResponseStatus.OK);
+        response.setContentLengthHeader(body.length()+"");
         return response;
     }
 }

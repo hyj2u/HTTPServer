@@ -8,7 +8,7 @@ form 핸들러 key value 복수일 때
 parameter form cookie url 자동매핑
 cookie 보완
 thread 에러 처리
-
+post form -> body ->response html +body
 
 과제 내용 :
 - 개별 과제
