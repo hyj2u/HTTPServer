@@ -10,12 +10,24 @@ import java.util.ArrayList;
 /**
  * Handler is abstract base class for all request handlers which help to generate appropriate response for each request.
  *
- * @author Younjin Hwnag
+ * @author Younjin Hwang
  * @version 1.0
  * @since 1.0
  */
 public abstract class Handler {
+    /**
+     * List for HttpVerbs that can be handled
+     *
+     * @see #addHandledVerb(HttpVerb) 
+     * @see #isHandledVerb(Request) 
+     */
     private final ArrayList<HttpVerb> handledVerbs = new ArrayList<>();
+    /**
+     * List for path segments that can be handled
+     *
+     * @see #addHandledPathSegment(String) 
+     * @see #isHandledPathSegment(Request)
+     */
     private final ArrayList<String> handledPathSegments = new ArrayList<>();
 
     /**

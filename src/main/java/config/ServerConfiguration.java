@@ -3,13 +3,24 @@ package config;
 /**
  * Configure port and path for socket connection.
  *
- * @author Younjin Hwnag
+ * @author Younjin Hwang
  * @version 1.0
  * @since 1.0
  */
-
 public class ServerConfiguration {
+    /**
+     * Port number for connection
+     *
+     * @see #setPort(int)
+     * @see #getPort()
+     */
     private int port;
+    /**
+     * Location for base resource package
+     *
+     * @see #setPath(String)
+     * @see #getPath()
+     */
     private String path;
 
     /**
@@ -57,14 +68,14 @@ public class ServerConfiguration {
     /**
      * Returns path for server's basic resource package
      *
-     * @return port number
+     * @return location for base resource package
      * @since 1.0
      */
     public String getPath() {
         return path;
     }
     /**
-     * Sets port number for server.
+     * Sets path for server.
      *
      * @param path location for base resource package
      * @since 1.0
