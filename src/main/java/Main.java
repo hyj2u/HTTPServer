@@ -13,8 +13,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ServerConfiguration serverConfiguration = new ServerConfiguration(); //default 8080, ""
-        RequestRouter requestRouter = new RequestRouter("src/main/resources");
+        ServerConfiguration serverConfiguration = new ServerConfiguration(8080, "src/main/resources");
+        RequestRouter requestRouter = new RequestRouter(serverConfiguration.getPath());
         try {
             ServerSocket serverSocket = new ServerSocket(serverConfiguration.getPort());
             HttpServer httpServer = new HttpServer(System.out, serverSocket,new ServerStatus(), Executors.newFixedThreadPool(200),requestRouter);
