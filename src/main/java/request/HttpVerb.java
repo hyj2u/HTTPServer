@@ -1,6 +1,5 @@
 package request;
 
-import handler.Handler;
 
 /**
  * HttpVerb Enum contains method that this server provides.
