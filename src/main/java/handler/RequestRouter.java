@@ -28,7 +28,6 @@ public class RequestRouter {
      *
      * @param handler
      * @see Handler
-     * @see ArrayList#add(Object)
      * @since 1.0
      */
     private void addHandler(Handler handler) {
@@ -52,7 +51,6 @@ public class RequestRouter {
      * This Constructor sets resource path and add handlers to handlers list.
      *
      * @param rootPath resource path that client request
-     * @see Arrays#asList(Object[])
      * @see #addHandlers(List)
      * @since 1.0
      */

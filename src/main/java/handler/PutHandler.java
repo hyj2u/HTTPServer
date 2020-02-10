@@ -53,10 +53,8 @@ public class PutHandler extends Handler {
      * makes file with request's contents at resource path.
      *
      * @exception IOException when path is not correct
-     * @see Files#write(Path, byte[], OpenOption...) 
      * @see Request#getResourcePath() 
-     * @see Request#getBodyContent() 
-     * @see String#getBytes() 
+     * @see Request#getBodyContent()
      * @since 1.0
      */
     private void writeFile(){
@@ -70,10 +68,8 @@ public class PutHandler extends Handler {
      * If making file succeeds, send 201 response.
      *
      * @exception IOException when path is not correct
-     * @see Files#write(Path, byte[], OpenOption...)
      * @see Request#getResourcePath()
      * @see Request#getBodyContent()
-     * @see String#getBytes()
      * @since 1.0
      */
     private void doCreateResponse(Response response){
@@ -100,13 +96,10 @@ public class PutHandler extends Handler {
      * @return object response for client output
      * @see Response
      * @see Response#setContentLengthHeader(String) 
-     * @see Request#getBodyContent() 
-     * @see String#length() 
-     * @see Files#exists(Path, LinkOption...) 
-     * @see Paths#get(URI) 
+     * @see Request#getBodyContent()
      * @see Request#getResourcePath() 
      * @see #doCreateResponse(Response) 
-     * @see #doUpdateResponse(Response) 
+     * @see #doUpdateResponse(Response)
      * @since 1.0
      */
     @Override

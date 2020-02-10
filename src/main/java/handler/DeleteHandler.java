@@ -64,8 +64,6 @@ public class DeleteHandler extends Handler {
      *
      * @exception IOException
      * @see Request#getResourcePath()
-     * @see Paths#get(URI)
-     * @see Files#delete(Path)
      * @see ResponseStatus
      * @see Response#setResponseStatus(ResponseStatus)
      * @since 1.0

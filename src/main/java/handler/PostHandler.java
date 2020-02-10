@@ -53,7 +53,6 @@ public class PostHandler extends Handler {
      * @see Response
      * @see Response#setBodyContent(byte[])
      * @see Request#getBodyContent()
-     * @see String#getBytes()
      * @see Response#setResponseStatus(ResponseStatus)
      * @see ResponseStatus
      * @since 1.0

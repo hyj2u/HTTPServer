@@ -46,11 +46,7 @@ public class OptionsHandler extends Handler {
      * @param request the object that made with client input at socket
      * @return Response
      * @see Response
-     * @see File
      * @see Request#getResourcePath()
-     * @see File#getName()
-     * @see String#toLowerCase()
-     * @see String#contains(CharSequence)
      * @see ResponseStatus
      * @see Response#setResponseStatus(ResponseStatus)
      * @see Response#setAllowHeader(String)

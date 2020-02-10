@@ -70,7 +70,6 @@ public class HeadHandler extends Handler {
      * @param resource
      * @return Response
      * @see Response
-     * @see File
      * @see ResponseStatus
      * @see Response#setResponseStatus(ResponseStatus)
      * @see Response#setContentTypeHeader(ContentType)
@@ -91,9 +90,7 @@ public class HeadHandler extends Handler {
      * @return if resource file exists, make head response, else send 404 response.
      * @see Request
      * @see Response
-     * @see File
      * @see Request#getResourcePath()
-     * @see File#exists()
      * @see #setResourceNotFoundResponse()
      * @see #getHeadResponse(File)
      * @see Response#clearBody()

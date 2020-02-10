@@ -71,10 +71,6 @@ public class PatchHandler extends Handler {
      * @exception NoSuchAlgorithmException when SHA-1 is not supported
      * @deprecated
      * @see FileContentConverter
-     * @see MessageDigest#getInstance(String)
-     * @see MessageDigest#reset()
-     * @see File
-     * @see MessageDigest#update(byte[])
      * @since 1.0
      */
     private String createSHA1(String fileURI){
@@ -101,9 +97,6 @@ public class PatchHandler extends Handler {
      * @return <code>true</code> If request does not have header named If-Match, or contents of If-Match header do nor equal Etag;
      * <code>false</code>Otherwise
      * @see Request#getHeaders()
-     * @see java.util.Map#containsKey(Object)
-     * @see java.util.Map#get(Object)
-     * @see String#equals(Object)
      * @since 1.0
      */
     private boolean notCorrectETAG(String shaActual){
@@ -124,11 +117,8 @@ public class PatchHandler extends Handler {
      * @see ResponseStatus
      * @see Response#setResponseStatus(ResponseStatus)
      * @see Response#setEtagHeader(String)
-     * @see Files#write(Path, byte[], OpenOption...)
-     * @see Paths#get(URI)
      * @see Request#getResourcePath()
      * @see Request#getBodyContent()
-     * @see String#getBytes()
      * @see Response#setContentLengthHeader(String)
      * @since 1.0
      */

@@ -40,8 +40,6 @@ public class ParametersHandler extends Handler {
      *
      * @param fullURI
      * @return parameter part
-     * @see String#indexOf(String) 
-     * @see String#substring(int)
      * @since 1.0
      */
     private String removeFirstPart(String fullURI){
@@ -54,7 +52,6 @@ public class ParametersHandler extends Handler {
      * @param fullParams parameter part of URL
      * @return encoded parameters
      * @exception UnsupportedEncodingException when String cannot be encoded as UTF-8
-     * @see URLDecoder#decode(String, String)
      * @since 1.0
      */
     private String decode(String fullParams){
@@ -71,10 +68,7 @@ public class ParametersHandler extends Handler {
      *
      * @param fullURI
      * @return params as a body content
-     * @see #removeFirstPart(String) 
-     * @see String#split(String) 
-     * @see StringBuilder
-     * @see StringBuilder#append(String)
+     * @see #removeFirstPart(String)
      * @since 1.0
      */
     private String getAllParams(String fullURI){
@@ -99,7 +93,6 @@ public class ParametersHandler extends Handler {
      * @see Response
      * @see #getAllParams(String) 
      * @see Request#getResourcePath()
-     * @see String#getBytes() 
      * @see Response#setResponseStatus(ResponseStatus) 
      * @see ResponseStatus
      * @see Response#setContentLengthHeader(String) 

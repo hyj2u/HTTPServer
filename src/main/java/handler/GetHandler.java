@@ -71,8 +71,7 @@ public class GetHandler extends Handler {
      * <code>false</code> otherwise;
      * @see Request
      * @see Request#getResourcePath()
-     * @see Paths#get(URI)
-     * @see Files#exists(Path, LinkOption...)
+
      * @since 1.0
      */
     private boolean resourceDoesNotExist(Request request) {
@@ -118,7 +117,6 @@ public class GetHandler extends Handler {
      * @throws IOException
      * @see Request
      * @see Response
-     * @see File
      * @see Request#getResourcePath()
      * @see ResourceTypeIdentifier#getType(File)
      * @see FileContentConverter#getFullContents(File)

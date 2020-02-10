@@ -58,8 +58,6 @@ public class RangeResponder {
      * @return range content
      * @see Request
      * @see Request#getHeaders()
-     * @see String#replaceAll(String, String)
-     * @see String#trim()
      * @since 1.0
      */
     private String getRangePart(Request request) {
@@ -73,7 +71,6 @@ public class RangeResponder {
      * @param rangeSlice content of range header
      * @return <code>true</code> if it have both limits
      * <code>false</code> otherwise;
-     * @see String#matches(String)
      * @since 1.0
      */
     private boolean bothLimitsExists(String rangeSlice) {
@@ -86,7 +83,6 @@ public class RangeResponder {
      * @param rangeSlice content of range header
      * @return <code>true</code> if it has only first limit
      * <code>false</code> otherwise;
-     * @see String#matches(String)
      * @since 1.0
      */
     private boolean firstLimitonly(String rangeSlice) {
@@ -99,9 +95,7 @@ public class RangeResponder {
      * @param rangeSlice   content of range header
      * @param fullContents resource contents
      * @return ArrayList it contains limit of start and end number
-     * @see String#split(String)
      * @see #bothLimitsExists(String)
-     * @see Integer#parseInt(String)
      * @see #firstLimitonly(String)
      * @since 1.0
      */
@@ -227,7 +221,6 @@ public class RangeResponder {
      * @param request the object that made with client input at socket
      * @return response object for client output
      * @throws IOException when request is null
-     * @see File
      * @see Request#getResourcePath()
      * @see FileContentConverter#getFullContents(File)
      * @see #getRangePart(Request)
