@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="465d766f-6d66-462d-9f5a-424f3a745d6e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/server/ResponseWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ResponseWriter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/server/ServerRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/ServerRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ContentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ContentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/FileContentConverter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/FileContentConverter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/ResourceTypeIdentifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/ResourceTypeIdentifier.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -508,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581310641964</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="add server comment">
+      <created>1581318344847</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1581318344847</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +524,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="util test" />
     <MESSAGE value="GET Handler" />
     <MESSAGE value="RangeResponder Test" />
     <MESSAGE value="Get Handler Test" />
@@ -541,7 +548,8 @@
     <MESSAGE value="add handler comments" />
     <MESSAGE value="add request comment" />
     <MESSAGE value="add response comment" />
-    <option name="LAST_COMMIT_MESSAGE" value="add response comment" />
+    <MESSAGE value="add server comment" />
+    <option name="LAST_COMMIT_MESSAGE" value="add server comment" />
   </component>
   <component name="WindowStateProjectService">
     <state x="92" y="92" width="2376" height="1216" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1580964032868">
@@ -572,10 +580,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1031" y="430" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1581066900732" />
-    <state x="871" y="294" key="CommitChangelistDialog2" timestamp="1581310638426">
+    <state x="871" y="294" key="CommitChangelistDialog2" timestamp="1581318341294">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="871" y="294" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1581310638426" />
+    <state x="871" y="294" key="CommitChangelistDialog2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1581318341294" />
     <state x="248" y="128" key="DiffContextDialog" timestamp="1579510182814">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -628,10 +636,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1579493693702" />
-    <state x="872" y="436" key="Vcs.Push.Dialog.v2" timestamp="1581310648802">
+    <state x="872" y="436" key="Vcs.Push.Dialog.v2" timestamp="1581318357487">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="872" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1581310648802" />
+    <state x="872" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400/2560.0.2560.1400@0.0.2560.1400" timestamp="1581318357487" />
     <state x="984" y="528" key="com.intellij.ide.util.TipDialog" timestamp="1581034777278">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>

@@ -38,7 +38,7 @@ public class ServerRunner implements Runnable {
      * Runs connectionManager's respond to method.
      *
      * @throws IOException
-     * @see ConnectionManager#respondTo(Socket) 
+     * @see ConnectionManager#respondTo(Socket)
      * @since 1.0
      */
     @Override
